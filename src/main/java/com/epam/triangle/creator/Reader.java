@@ -2,7 +2,9 @@ package com.epam.triangle.creator;
 
 import com.epam.triangle.view.Printer;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
