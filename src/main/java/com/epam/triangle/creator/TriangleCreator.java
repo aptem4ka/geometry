@@ -18,10 +18,11 @@ public class TriangleCreator {
 
             if (substrings.length == 6) {     //Для треугольника требуется 6 подстрок (3 координаты X и Y)
                 if (CheckTriangle.checkCoordinats(substrings,this))
-                {  createDot();
-                    break;}
+                 break; //Первая строка, успешно прошедшая проверку, завершает цикл. Далее создаем точки
             }
         }
+        createDot();
+        
 if (coordinates.size()<6){  //Если в txt нет строки с 6 корректными координатами - треугольник создать нельзя
 throw new NotEnoughCoordinatsException("This txt doesnt content enough correct coordinates to create a triangle");}
 
