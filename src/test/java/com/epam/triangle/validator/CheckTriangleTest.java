@@ -46,25 +46,24 @@ private static Triangle triangle;
         Printer.print("Creating a figure...");
     }
 
-
     @Test
-    public void testIsTriangle() {
+    public void testIsTriangle() {          //Является ли фигура треугольником
         boolean isTriangle=CheckTriangle.isTriangle(triangle);
 
     }
 
     @Test
-    public void testIsIsosceles(){
+    public void testIsIsosceles(){             //Является ли треугольник равнобедренным
         CheckTriangle.isIsosceles(triangle);
     }
 
     @Test
-    public void testIsEquiangular()  {
+    public void testIsEquiangular()  {          //является ли треугольник равносторонним
         CheckTriangle.isEquiangular(triangle);
     }
 
     @Test
-    public void testIsRightAngled() {
+    public void testIsRightAngled() {           //является ли треугольник прямоугольным, остро- или тупоугольным
         CheckTriangle.isRightAngled(triangle);
     }
 }

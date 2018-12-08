@@ -17,7 +17,7 @@ public class Reader {
         String fileName=null;
         ArrayList<String> list=new ArrayList<>();
 
-  /*      ВВОД ПУТИ К ДОКУМЕНТУ С ДАННЫМИ
+  /*      ВВОД ПУТИ К ДОКУМЕНТУ С ДАННЫМИ ВРУЧНУЮ
 
    try (BufferedReader br=new BufferedReader(new InputStreamReader(System.in));)
       {     Printer.print("Enter the txt path");

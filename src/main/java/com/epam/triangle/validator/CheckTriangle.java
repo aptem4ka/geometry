@@ -9,14 +9,15 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class CheckTriangle {
-public final static String PATTERN_PARSER="(\\d+\\.\\d++)|\\d+";
+public final static String PATTERN_PARSER="(-?\\d+\\.\\d++)|-?\\d+";
+
     public static boolean checkCoordinats(String[] strings, TriangleCreator triangleCreator) {
         for (String x : strings) {
-            if (x.trim().matches(PATTERN_PARSER))            //проверка на дробные и целые числа и добавление в
-                triangleCreator.getCoordinates().add(Double.parseDouble(x));   //коллекцию. Возвращается true,
-            else {                                                         //иначе ранее добавленные символы удаляются
-                triangleCreator.getCoordinates().clear();                   //и треугольник не создается. Возвращается false
-                break;
+            if (x.trim().matches(PATTERN_PARSER))                               //проверка на то, что в подстроке
+                triangleCreator.getCoordinates().add(Double.parseDouble(x));   //дробное или целое число с минусом или без.
+            else {                                                            //Правильное значение добавляется в коллекцию.
+                triangleCreator.getCoordinates().clear();                   //Неправильное очищает коллекцию и выходит из цикла,
+                break;                                                     //возвращая false
             }
         }
         if (!triangleCreator.getCoordinates().isEmpty())
@@ -28,7 +29,7 @@ public final static String PATTERN_PARSER="(\\d+\\.\\d++)|\\d+";
 public static boolean isTriangle(Triangle triangle)
 {boolean x= triangle.getSideA()+triangle.getSideB()>triangle.getSideC(); //Если сумма двух сторон больше третьей,
 boolean y=triangle.getSideB()+triangle.getSideC()>triangle.getSideA();   //значит отрезки не лежат в одной плоскости
-boolean z=triangle.getSideA()+triangle.getSideC()>triangle.getSideB();
+boolean z=triangle.getSideA()+triangle.getSideC()>triangle.getSideB();  // и фигура является треугольником
 
     if (x&&y&&z)
     {
@@ -45,7 +46,7 @@ public static boolean isIsosceles(Triangle triangle)
     double A=triangle.getSideA();
     double B=triangle.getSideB();
     double C=triangle.getSideC();
-    if (A==B && A!=C || A==C && A!=B || B==C && B!=A)
+    if (A==B && A!=C || A==C && A!=B || B==C && B!=A) //Является ли треугольник равнобедренным
     {
         System.out.println("This triangle is isosceles");
         return true;
@@ -59,7 +60,7 @@ public static boolean isEquiangular(Triangle triangle)
     double A=triangle.getSideA();
     double B=triangle.getSideB();
     double C=triangle.getSideC();
-    if (A==B && A==C)
+    if (A==B && A==C)                               //Является ли треугольник равносторонним
     {
         Printer.print("This triangle is equiangular");
         return true;
@@ -70,10 +71,11 @@ public static boolean isEquiangular(Triangle triangle)
 
 public static void isRightAngled(Triangle triangle)
 {
+    Printer.print("The parameters of the triangle are: \n"+triangle.toString());
     double A=Math.pow(triangle.getSideA(),2);
     double B=Math.pow(triangle.getSideB(),2);
-    double C=Math.pow(triangle.getSideC(),2);
-    double max;
+    double C=Math.pow(triangle.getSideC(),2);       //Находим квадраты сторон для определения, является ли
+    double max;                                     //треугольник прямоугольным, остроугольным или тупоугольным
 
     ArrayList<Double> list=new ArrayList();
     list.add(A);
@@ -88,8 +90,7 @@ public static void isRightAngled(Triangle triangle)
         Printer.print("This triangle is right angled");
     else if (list.get(2)<list.get(1)+list.get(0))
         Printer.print("This triangle is acute");
-    for (double x:list)
-        System.out.println(x);
+
 
 }
 

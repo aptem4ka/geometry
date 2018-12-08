@@ -10,18 +10,13 @@ public class TriangleCreator {
     private ArrayList<Double> coordinates = new ArrayList<>();
     private Triangle triangle=new Triangle();
 
-    public Triangle getTriangle() {
-        return triangle;
-    }
-
     public Triangle creator() throws NotEnoughCoordinatsException{
         ArrayList<String> list = Reader.readTxt();
 
         for (String x : list) {
-            String delimeter = " ";
             String[] substrings = this.Delimeter(list);
 
-            if (substrings.length == 6) {                     //Для создания треугольника надо 6 точек
+            if (substrings.length == 6) {     //Для треугольника требуется 6 подстрок (3 координаты X и Y)
                 if (CheckTriangle.checkCoordinats(substrings,this))
                 {  createDot();
                     break;}
@@ -34,12 +29,12 @@ throw new NotEnoughCoordinatsException("This txt doesnt content enough correct c
     return triangle;
     }
 
+
     public String[] Delimeter(ArrayList<String> list)
     {String[] substrings=null;
         for (String x : list) {
             String delimeter = " ";
            substrings = x.split(delimeter);
-
     }
         return substrings;}
 
@@ -67,7 +62,12 @@ triangle.setDotC(c);
     public ArrayList<Double> getCoordinates() {
         return coordinates;
     }
+
+    public Triangle getTriangle() {
+        return triangle;
+    }
 }
+
 
 class NotEnoughCoordinatsException extends Exception{
     public NotEnoughCoordinatsException(String message) {

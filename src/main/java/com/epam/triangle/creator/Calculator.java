@@ -18,7 +18,7 @@ public class Calculator {
 
     private static double findVector(Dot dotA, Dot dotB)
     {
-        return Math.sqrt((dotB.getX()-dotA.getX())*(dotB.getX()-dotA.getX()) //Поиск вектора по двум координатам
+        return Math.sqrt((dotB.getX()-dotA.getX())*(dotB.getX()-dotA.getX()) //Формула поиска вектора по двум координатам
                 +(dotB.getY()-dotA.getY())*(dotB.getY()-dotA.getY()));
     }
 
