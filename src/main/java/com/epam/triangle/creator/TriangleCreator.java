@@ -22,7 +22,7 @@ public class TriangleCreator {
                     break;}
             }
         }
-if (coordinates.size()<6){
+if (coordinates.size()<6){  //Если в txt не нашлось 6 корректных координат в строке - треугольник создать нельзя
 throw new NotEnoughCoordinatsException("This txt doesnt content enough correct coordinates to create a triangle");}
 
     Calculator.setSides(triangle);

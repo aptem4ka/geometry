@@ -1,18 +1,11 @@
 package com.epam.triangle.creator;
 
-import com.epam.triangle.figure.Triangle;
-import com.epam.triangle.validator.CheckTriangle;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import static org.testng.Assert.*;
 
 public class TriangleCreatorTest {
 

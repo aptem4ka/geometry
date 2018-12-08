@@ -1,10 +1,8 @@
 package com.epam.triangle.validator;
 
 import com.epam.triangle.creator.TriangleCreator;
-import com.epam.triangle.figure.Dot;
 import com.epam.triangle.figure.Triangle;
 import com.epam.triangle.view.Printer;
-
 import java.util.ArrayList;
 import java.util.Collections;
 

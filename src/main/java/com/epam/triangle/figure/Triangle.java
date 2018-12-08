@@ -1,9 +1,6 @@
 package com.epam.triangle.figure;
 
 
-import com.epam.triangle.creator.TriangleCreator;
-import com.epam.triangle.validator.CheckTriangle;
-
 public class Triangle {
     private Dot dotA;
     private Dot dotB;

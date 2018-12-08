@@ -1,22 +1,14 @@
 package com.epam.triangle.validator;
 
 import com.epam.triangle.creator.Calculator;
-import com.epam.triangle.creator.TriangleCreator;
 import com.epam.triangle.figure.Create;
-import com.epam.triangle.figure.Dot;
 import com.epam.triangle.figure.Triangle;
 import com.epam.triangle.view.Printer;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import java.io.IOException;
-import java.util.ArrayList;
-
-import static com.epam.triangle.validator.CheckTriangle.checkCoordinats;
-import static org.testng.Assert.*;
 
 public class CheckTriangleTest {
 private static Triangle triangle;
@@ -47,9 +39,8 @@ private static Triangle triangle;
     }
 
     @Test
-    public void testIsTriangle() {          //Является ли фигура треугольником
-        boolean isTriangle=CheckTriangle.isTriangle(triangle);
-
+    public void testIsTriangle() {
+        CheckTriangle.isTriangle(triangle);
     }
 
     @Test

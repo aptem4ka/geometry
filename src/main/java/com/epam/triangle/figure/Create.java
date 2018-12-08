@@ -10,13 +10,12 @@ public class Create {
     public static Triangle tryToCreate(){
 
       try {
-          triangle= triangleCreator.creator();
+          triangle= triangleCreator.creator();  //creator считывает данные из txt, проверяет их правильность и создает треугольник
       }catch (Exception e){
           Printer.printError(e.getMessage());
       }
     return triangle;
     }
-
 
     public Triangle getTriangle() {
         return triangle;
