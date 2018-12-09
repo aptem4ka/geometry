@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class CheckTriangle {
-public final static String PATTERN_PARSER="(-?\\d+\\.\\d++)|-?\\d+";
+public final static String PATTERN_PARSER="(-?\\d+\\.\\d+)|-?\\d+";
 
     public static boolean checkCoordinats(String[] strings, TriangleCreator triangleCreator) {
         for (String x : strings) {
